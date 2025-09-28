@@ -1,543 +1,468 @@
-<!doctype html>
-<html lang="en" "hi">
-<head>
-  <!--5
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--5
   -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travel with Himesh Prabhakar — Curated Trips & Holiday Packages</title>
-  <meta name="description" content="Plan unforgettable holidays with Travel with Himesh Prabhakar. Handpicked packages to Bali, Maldives, Europe, India & more. Transparent pricing, trusted partners, 24×7 support.">
-  <meta name="theme-color" content="#0ea5e9">
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Travel with Himesh Prabhakar — Curated Trips & Holiday Packages">
-  <meta property="og:description" content="Handpicked packages, trusted local experts, and seamless bookings.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-  <meta property="og:url" content="https://example.com/">
-  <link rel="icon" href="https://fav.farm/✈️">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --brand:#0ea5e9;          /* sky-500 */
-      --brand-600:#0284c7;      /* sky-600 */
-      --accent:#f59e0b;         /* amber-500 */
-      --ink:#0f172a;            /* slate-900 */
-      --muted:#475569;          /* slate-600 */
-      --bg:#f8fafc;             /* slate-50 */
-      --card:#ffffff;
-      --ring: 0 0 0 3px rgba(14,165,233,.25);
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(2,8,23,.08);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; color:var(--ink); background:var(--bg)}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1200px;margin-inline:auto;padding:0 20px}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand);color:#fff;border:none;padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
-    .btn:hover{background:var(--brand-600)}
-    .btn.outline{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-    .badge{display:inline-block;background:#eaf7fe;color:var(--brand-600);padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:700}
-    .chip{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #e5e7eb;padding:6px 10px;border-radius:999px;background:#fff}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .section{padding:72px 0}
-    .title{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(28px,3vw,40px);line-height:1.1;margin:0 0 12px}
-    .lead{color:var(--muted);font-size:clamp(16px,2vw,18px)}
-    .grid{display:grid;gap:24px}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:900px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
-
-    /* Header */
-    header.site{position:sticky;top:0;z-index:50;background:#ffffffb3;backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{display:flex;gap:.6rem;align-items:center;font-weight:800}
-    .logo .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#22d3ee);display:grid;place-items:center;color:#fff}
-    .nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
-    .nav a{padding:8px 10px;border-radius:10px}
-    .nav a:hover{background:#f1f5f9}
-    .mobile-toggle{display:none}
-    @media (max-width:900px){
-      .nav ul{display:none}
-      .mobile-toggle{display:inline-flex}
-      .nav.open ul{display:flex;flex-direction:column;position:absolute;left:20px;right:20px;top:64px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px}
-    }
-
-    /* Hero */
-    .hero{position:relative;min-height:72vh;display:grid;place-items:center;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.6)}
-    .hero>.container{position:relative;display:grid;gap:20px;grid-template-columns:1.2fr .8fr;align-items:center}
-    .hero h1{font-family:"Playfair Display",serif;color:#fff;font-size:clamp(36px,5vw,60px);margin:0}
-    .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .search{background:#fff;padding:16px;border-radius:14px;display:grid;gap:12px;grid-template-columns:2fr 1.5fr 1fr auto;align-items:center}
-    .search input, .search select{padding:12px;border:1px solid #e5e7eb;border-radius:12px;width:100%}
-    @media (max-width:900px){.hero>.container{grid-template-columns:1fr}.search{grid-template-columns:1fr 1fr 1fr}}
-
-    /* Destinations */
-    .destinations .item{overflow:hidden;position:relative}
-    .destinations .item img{height:220px;width:100%;object-fit:cover}
-    .destinations .item .label{position:absolute;bottom:10px;left:10px;background:#ffffffde;padding:8px 12px;border-radius:999px;font-weight:700}
-
-    /* Packages */
-    .pkg{display:flex;flex-direction:column}
-    .pkg .media{height:220px;overflow:hidden}
-    .pkg .media img{width:100%;height:100%;object-fit:cover}
-    .pkg .body{padding:18px;display:grid;gap:10px}
-    .price{font-weight:800;font-size:1.2rem}
-    .inc{display:flex;flex-wrap:wrap;gap:8px}
-
-    /* Why Us */
-    .why .point{display:flex;gap:14px}
-    .why .point i{width:40px;height:40px;border-radius:12px;background:#eaf7fe;display:grid;place-items:center;color:var(--brand-600);font-weight:800}
-
-    /* Testimonials */
-    .slider{position:relative}
-    .slide{display:none}
-    .slide.active{display:block}
-
-    /* Gallery */
-    .gallery{grid-template-columns:repeat(6,1fr)}
-    .gallery img{border-radius:12px}
-    @media (max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
-
-    /* FAQ */
-    details{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
-    details+details{margin-top:12px}
-    summary{cursor:pointer;font-weight:700}
-
-    /* Contact */
-    form .field{display:grid;gap:6px}
-    form input, form textarea, form select{padding:12px;border:1px solid #e5e7eb;border-radius:12px}
-    iframe.map{width:100%;height:320px;border:0;border-radius:16px}
-
-    footer{background:#0b1220;color:#cbd5e1;padding:30px 0;margin-top:40px}
-    footer a{color:#e2e8f0}
-    .small{font-size:.85rem;color:#64748b}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Travel with Himesh Prabhakar",
-    "url": "https://musafirhimesh.com/",
-    "logo": "https://fav.farm/%E2%9C%88%EF%B8%8F",
-    "sameAs": ["https://instagram.com/", "https://facebook.com/"],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91-9368782277",
-      "contactType": "customer service",
-      "areaServed": "IN"
-    }]
-  }
-  </script>
-</head>
-<body>
-  <!-- Header / Nav -->
-  <header class="site">
-    <div class="container nav" id="nav">
-      <a class="logo" href="#home" aria-label="Travel with Himesh Prabhakar home">
-        <span class="mark">✈️</span>
-        <span>Travel with Himesh Prabhakar</span>
-      </a>
-      <nav aria-label="Primary">
-        <button class="btn outline mobile-toggle" aria-controls="menu" aria-expanded="false" onclick="toggleMenu()">Menu</button>
-        <ul id="menu">
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#hacks">Travel Hacks</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="home" role="banner" aria-label="Hero">
-    <div class="container">
-      <div>
-        <span class="badge">Trusted by 1,000+ happy travelers</span>
-        <h1>Discover your next <em style="color:var(--accent);font-style:normal">unforgettable</em> journey.</h1>
-        <p class="lead">Personalized itineraries, handpicked stays, and 24×7 support. From weekend escapes to luxury honeymoons—travel made effortless.</p>
-        <div class="cta">
-          <a href="#packages" class="btn">Explore Packages</a>
-          <a href="https://wa.me/919368782277" class="btn outline">Chat on WhatsApp</a>
-        </div>
-      </div>
-      <div class="card" aria-label="Quick search" style="padding:18px">
-        <form class="search" onsubmit="event.preventDefault();scrollToId('packages')" aria-label="search-packages">
-          <input type="text" id="q" placeholder="Search destination (e.g., Bali, Goa, Europe)" aria-label="Search">
-          <select id="days" aria-label="Trip duration">
-            <option value="">Duration</option>
-            <option value="3-4">3–4 days</option>
-            <option value="5-7">5–7 days</option>
-            <option value="8-12">8–12 days</option>
-          </select>
-          <select id="budget" aria-label="Budget per person">
-            <option value="">Budget</option>
-            <option value="under-40k">Under ₹40k</option>
-            <option value="40-80k">₹40k–₹80k</option>
-            <option value="80k+">₹80k+</option>
-          </select>
-          <button class="btn" type="submit">Find Trips</button>
-        </form>
-        <p class="small" style="margin:10px 6px 0">Popular: <span class="chip">Bali</span> <span class="chip">Maldives</span> <span class="chip">Kashmir</span> <span class="chip">Paris</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Destinations -->
-  <section class="section destinations" id="destinations">
-    <div class="container">
-      <h2 class="title">Top Destinations</h2>
-      <p class="lead">A peek into our most loved places right now.</p>
-      <div class="grid grid-3" id="destGrid">
-        <!-- Destination cards injected by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Packages -->
-  <section class="section" id="packages">
-    <div class="container">
-      <h2 class="title">Featured Packages</h2>
-      <p class="lead">Transparent pricing with flights, stays, transfers & curated experiences.</p>
-      <div class="grid grid-3" id="pkgGrid">
-        <!-- Packages injected by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="section why" id="why-us">
-    <div class="container grid grid-3">
-      <div class="card" style="padding:22px">
-        <div class="point"><i>✓</i>
-          <div>
-            <h3>Handpicked Stays</h3>
-            <p class="lead">We partner with stays that deliver character, comfort, and service.</p>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="padding:22px">
-        <div class="point"><i>₹</i>
-          <div>
-            <h3>Clear, Fair Prices</h3>
-            <p class="lead">No hidden costs. All inclusions listed upfront with GST invoices.</p>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="padding:22px">
-        <div class="point"><i>24×7</i>
-          <div>
-            <h3>Always-On Support</h3>
-            <p class="lead">From airport pickup to last-day drop, we’re one WhatsApp away.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Slider -->
-  <section class="section" id="testimonials">
-    <div class="container slider">
-      <h2 class="title">Happy Travelers</h2>
-      <div class="card" style="padding:22px">
-        <figure class="slide active">
-          <blockquote>“From hotels and drivers to the tiny details—everything was perfect. We’ll book again!”</blockquote>
-          <figcaption>— Aarti & Nikhil (Ooty, 2025)</figcaption>
-        </figure>
-        <figure class="slide">
-          <blockquote>“Bali honeymoon was dreamy. Private pool villa, island hops, the works. Thank you!”</blockquote>
-          <figcaption>— Simran & Karan (Bali, 2025)</figcaption>
-        </figure>
-        <figure class="slide">
-          <blockquote>“Kashmir in spring with curated local guides—felt safe, serene, special.”</blockquote>
-          <figcaption>— Rohit (Kashmir, 2024)</figcaption>
-        </figure>
-        <div style="display:flex;gap:10px;margin-top:14px">
-          <button class="btn outline" onclick="prevSlide()" aria-label="Previous testimonial">◀</button>
-          <button class="btn" onclick="nextSlide()" aria-label="Next testimonial">▶</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Travel Hacks / Blog preview -->
-  <section class="section" id="hacks">
-    <div class="container">
-      <h2 class="title">Travel Hacks & Guides</h2>
-      <div class="grid grid-3">
-        <article class="card" style="overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop" alt="Bali cliffs and ocean">
-          <div style="padding:18px">
-            <h3>Top Bali Travel Hacks</h3>
-            <p class="lead">Skip crowds at Gates of Heaven, best SIMs, trusted money changers, and island-hopping tips.</p>
-            <a class="btn outline" href="#" aria-label="Read Bali hacks">Read</a>
-          </div>
-        </article>
-        <article class="card" style="overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1500534314210-9b6d0f9e1e0b?q=80&w=1200&auto=format&fit=crop" alt="Maldives overwater villas">
-          <div style="padding:18px">
-            <h3>Maldives on Any Budget</h3>
-            <p class="lead">Resort vs local island stays, transfer choices, and meal plans explained simply.</p>
-            <a class="btn outline" href="#" aria-label="Read Maldives tips">Read</a>
-          </div>
-        </article>
-        <article class="card" style="overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1200&auto=format&fit=crop" alt="Paris city view">
-          <div style="padding:18px">
-            <h3>Europe Visa & Schengen Basics</h3>
-            <p class="lead">Entry rules, biometrics, and how to plan multi-country routes with ease.</p>
-            <a class="btn outline" href="#" aria-label="Read Schengen basics">Read</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <h2 class="title">Trip Moments</h2>
-      <div class="grid gallery" id="galleryGrid"></div>
-    </div>
-  </section>
-
-  <!-- FAQs -->
-  <section class="section" id="faqs">
-    <div class="container">
-      <h2 class="title">FAQs</h2>
-      <details>
-        <summary>What’s included in the package price?</summary>
-        <p>Standard inclusions: flights (if mentioned), stay, breakfast, airport transfers, and listed tours. Exclusions are clearly stated in each package.</p>
-      </details>
-      <details>
-        <summary>Can I customize an itinerary?</summary>
-        <p>Absolutely. Share your dates, budget, and preferences—we’ll tailor it and send options within hours.</p>
-      </details>
-      <details>
-        <summary>How do payments work?</summary>
-        <p>Secure online link (Razorpay/UPI). Pay in milestones—booking advance, pre-departure balance.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container grid grid-2">
-      <div class="card" style="padding:22px">
-        <h2 class="title">Get a Free Quote</h2>/
-        <form onsubmit="submitForm(event)">
-          <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
-            <div class="field"><label for="name">Name</label><input id="name" required></div>
-            <div class="field"><label for="phone">Phone/WhatsApp</label><input id="phone" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" type="email"></div>
-            <div class="field"><label for="people">Travellers</label><input id="people" type="number" min="1" value="2"></div>
-            <div class="field"><label for="from">From City</label><input id="from" placeholder="Delhi, Mumbai, ..."></div>
-            <div class="field"><label for="destination">Destination</label><input id="destination" placeholder="Bali, Maldives, ..." required></div>
-            <div class="field" style="grid-column:1/3"><label for="dates">Dates</label><input id="dates" placeholder="e.g., 15–22 Oct"></div>
-            <div class="field" style="grid-column:1/3"><label for="notes">Notes</label><textarea id="notes" rows="4" placeholder="Budget range, hotel type, highlights..."></textarea></div>
-          </div>
-          <div style="display:flex;gap:12px;margin-top:12px">
-            <button class="btn" type="submit">Request Quote</button>
-            <a class="btn outline" href="https://wa.me/910000000000?text=Hi%20I%20want%20a%20trip%20quote" target="_blank" rel="noreferrer">WhatsApp Us</a>
-          </div>
-          <p id="formStatus" class="small" role="status" aria-live="polite" style="margin-top:10px"></p>
-        </form>
-      </div>
-      <div class="card" style="padding:22px">
-        <h3>Visit Us</h3>
-        <p class="lead">Near Deputy Ganj Post Office, Bulandshahr, Uttar Pradesh, 2030001</p>
-        <iframe class="map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363153166!3d-37.81627944202105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzAwLjYiUyAxNDTCsDU3JzE0LjMiRQ!5e0!3m2!1sen!2sin!4v1689250000000"></iframe>
-        <div style="display:flex;gap:12px;margin-top:12px">
-          <a href="tel:+91 93687 82277" class="chip">📞 +91 94587 82277</a>
-          <a href="mailto:hm@musafirhimeh.com" class="chip">✉️ info@musafirhimesh.com</a>
-          <a href="#" class="chip">📷 Instagram</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <p>© <span id="year"></span> Travel with Himesh Prabhakar • All rights reserved</p>
-        <p class="small">Made with ❤ for wanderers. <a href="#faqs">FAQs</a> • <a href="#">Privacy</a> • <a href="#">Terms</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // --- Mobile menu ---
-    function toggleMenu(){
-      const nav=document.getElementById('nav');
-      const btn=document.querySelector('.mobile-toggle');
-      const expanded=btn.getAttribute('aria-expanded')==='true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-    }
-    function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
-
-    // --- Data (replace with your real content or fetch from CMS) ---
-    const destinations=[
-      {name:'Bali, Indonesia', img:'https://images.unsplash.com/photo-1506343760170-4e404ee25c06?q=80&w=1200&auto=format&fit=crop'},
-      {name:'Maldives', img:'https://images.unsplash.com/photo-1501117716987-c8e0bdde6651?q=80&w=1200&auto=format&fit=crop'},
-      {name:'Paris, France', img:'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop'},
-      {name:'Kashmir, India', img:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop'},
-      {name:'Goa, India', img:'https://images.unsplash.com/photo-1599058945522-28d584b1f6b2?q=80&w=1200&auto=format&fit=crop'},
-      {name:'Swiss Alps', img:'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=1200&auto=format&fit=crop'}
-    ];
-
-    const packages=[
-      {id:'bali-6n', title:'Bali Bliss (6N7D)', place:'Bali', days:7, price:59999, currency:'INR', budget:'40-80k', duration:'5-7',
-        img:'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200&auto=format&fit=crop',
-        inc:['4★ Hotels','Breakfast','Private Transfers','Nusa Penida Tour'],
-        desc:'Romantic villas + waterfalls + island day trip. Perfect for couples.'},
-      {id:'maldives-4n', title:'Maldives Escape (4N5D)', place:'Maldives', days:5, price:109999, currency:'INR', budget:'80k+', duration:'3-4',
-        img:'https://images.unsplash.com/photo-1503197979108-c824168d51a8?q=80&w=1200&auto=format&fit=crop',
-        inc:['OW Villa Option','Half Board','Speedboat Transfer'],
-        desc:'Turquoise lagoons and lazy luxury. Honeymooner favorite.'},
-      {id:'kashmir-5n', title:'Kashmir Spring (5N6D)', place:'Kashmir', days:6, price:34999, currency:'INR', budget:'under-40k', duration:'5-7',
-        img:'https://images.unsplash.com/photo-1604933762160-96fa2a6cc4f5?q=80&w=1200&auto=format&fit=crop',
-        inc:['Houseboat','Breakfast & Dinner','Gulmarg & Pahalgam Tours'],
-        desc:'Valley blooms, shikara rides, and snow-capped serenity.'},
-      {id:'paris-7n', title:'Paris & Beyond (7N8D)', place:'Paris', days:8, price:129999, currency:'INR', budget:'80k+', duration:'8-12',
-        img:'https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop',
-        inc:['City Pass','Louvre Entry','Seine Cruise'],
-        desc:'Classic Europe starter with art, cafes, and countryside jaunts.'},
-      {id:'goa-3n', title:'Goa Weekend (3N4D)', place:'Goa', days:4, price:14999, currency:'INR', budget:'under-40k', duration:'3-4',
-        img:'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?q=80&w=1200&auto=format&fit=crop',
-        inc:['3★ Resort','Breakfast','Airport Transfers'],
-        desc:'Beachy breather with flea markets, forts, and seafood trails.'},
-      {id:'alps-6n', title:'Swiss Alps Trails (6N7D)', place:'Swiss Alps', days:7, price:159999, currency:'INR', budget:'80k+', duration:'5-7',
-        img:'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=1200&auto=format&fit=crop',
-        inc:['Swiss Pass','Mountain Excursions','Breakfast'],
-        desc:'Postcard vistas, lakes, and trains that run like clockwork.'}
-    ];
-
-    const galleryImgs=[
-      'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1500534314210-9b6d0f9e1e0b?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503197979108-c824168d51a8?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1604933762160-96fa2a6cc4f5?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop'
-    ];
-
-    // --- Render Destinations ---
-    const destGrid=document.getElementById('destGrid');
-    destinations.forEach(d=>{
-      const card=document.createElement('article');
-      card.className='card item';
-      card.innerHTML=`<img src="${d.img}" alt="${d.name}"><span class="label">${d.name}</span>`;
-      destGrid.appendChild(card);
-    });
-
-    // --- Render Packages (with filtering by quick search) ---
-    const pkgGrid=document.getElementById('pkgGrid');
-    function renderPackages(filter={}){
-      pkgGrid.innerHTML='';
-      const list=packages.filter(p=>{
-        const q=(filter.q||'').toLowerCase();
-        const okQ = !q || p.title.toLowerCase().includes(q) || p.place.toLowerCase().includes(q);
-        const okDur = !filter.duration || p.duration===filter.duration;
-        const okBudget=!filter.budget || p.budget===filter.budget;
-        return okQ && okDur && okBudget;
-      });
-      list.forEach(p=>{
-        const el=document.createElement('article');
-        el.className='card pkg';
-        el.innerHTML=`
-          <div class="media"><img src="${p.img}" alt="${p.title}"></div>
-          <div class="body">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-              <h3 style="margin:0">${p.title}</h3>
-              <span class="badge">${p.days} days</span>
-            </div>
-            <p class="lead">${p.desc}</p>
-            <div class="inc">${p.inc.map(i=>`<span class='chip'>${i}</span>`).join('')}</div>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px">
-              <span class="price">₹${p.price.toLocaleString('en-IN')}</span>
-              <a class="btn" href="#contact" onclick="prefill('${p.title}','${p.place}')">Enquire</a>
-            </div>
-          </div>`;
-        pkgGrid.appendChild(el);
-      });
-      if(!list.length){
-        pkgGrid.innerHTML = `<div class="card" style="padding:20px"><p>No packages found. Try clearing filters.</p></div>`;
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Travel with Himesh Prabhakar — Curated Trips & Holiday Packages
+    </title>
+    <meta
+      name="description"
+      content="Plan unforgettable holidays with Travel with Himesh Prabhakar. Handpicked packages to Bali, Maldives, Europe, India & more. Transparent pricing, trusted partners, 24×7 support."
+    />
+    <meta name="theme-color" content="#0ea5e9" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Travel with Himesh Prabhakar — Curated Trips & Holiday Packages"
+    />
+    <meta
+      property="og:description"
+      content="Handpicked packages, trusted local experts, and seamless bookings."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+    />
+    <meta property="og:url" content="https://example.com/" />
+    <link rel="icon" href="/logo.jpg" type="image/jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Travel with Himesh Prabhakar",
+        "url": "https://musafirhimesh.com/",
+        "logo": "https://fav.farm/%E2%9C%88%EF%B8%8F",
+        "sameAs": ["https://instagram.com/", "https://facebook.com/"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+91-9368782277",
+            "contactType": "customer service",
+            "areaServed": "IN"
+          }
+        ]
       }
-    }
+    </script>
+  </head>
+  <body>
+    <!-- Header / Nav -->
+    <header class="site">
+      <div class="container nav" id="nav">
+        <a
+          class="logo"
+          href="#home"
+          aria-label="Travel with Himesh Prabhakar home"
+        >
+          <img src="logo.jpg" alt="logo" id="logo" />
+          <span>Travel with Himesh Prabhakar</span>
+        </a>
+        <nav aria-label="Primary">
+          <button
+            class="btn outline mobile-toggle"
+            aria-controls="menu"
+            aria-expanded="false"
+            onclick="toggleMenu()"
+          >
+            Menu
+          </button>
+          <ul id="menu">
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#hacks">Travel Hacks</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    renderPackages();
+    <!-- Hero -->
+    <section class="hero" id="home" role="banner" aria-label="Hero">
+      <div class="container">
+        <div>
+          <span class="badge">Trusted by 1,000+ happy travelers</span>
+          <h1>
+            Discover your next
+            <em style="color: var(--accent); font-style: normal"
+              >unforgettable</em
+            >
+            journey.
+          </h1>
+          <p class="lead">
+            Personalized itineraries, handpicked stays, and 24×7 support. From
+            weekend escapes to luxury honeymoons—travel made effortless.
+          </p>
+          <div class="cta">
+            <a href="#packages" class="btn">Explore Packages</a>
+            <a href="https://wa.me/919368782277" class="btn outline"
+              >Chat on WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="card" aria-label="Quick search" style="padding: 18px">
+          <form
+            class="search"
+            onsubmit="event.preventDefault();scrollToId('packages')"
+            aria-label="search-packages"
+          >
+            <input
+              type="text"
+              id="q"
+              placeholder="Search destination (e.g., Bali, Goa, Europe)"
+              aria-label="Search"
+            />
+            <select id="days" aria-label="Trip duration">
+              <option value="">Duration</option>
+              <option value="3-4">3–4 days</option>
+              <option value="5-7">5–7 days</option>
+              <option value="8-12">8–12 days</option>
+            </select>
+            <select id="budget" aria-label="Budget per person">
+              <option value="">Budget</option>
+              <option value="under-40k">Under ₹40k</option>
+              <option value="40-80k">₹40k–₹80k</option>
+              <option value="80k+">₹80k+</option>
+            </select>
+            <button class="btn" type="submit">Find Trips</button>
+          </form>
+          <p class="small" style="margin: 10px 6px 0">
+            Popular: <span class="chip">Bali</span>
+            <span class="chip">Maldives</span>
+            <span class="chip">Kashmir</span> <span class="chip">Paris</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-    // Search form interactions
-    document.querySelector('.search').addEventListener('submit',()=>{
-      const filter={
-        q:document.getElementById('q').value,
-        duration:document.getElementById('days').value,
-        budget:document.getElementById('budget').value
-      };
-      renderPackages(filter);
-    });
+    <!-- Destinations -->
+    <section class="section destinations" id="destinations">
+      <div class="container">
+        <h2 class="title">Top Destinations</h2>
+        <p class="lead">A peek into our most loved places right now.</p>
+        <div class="grid grid-3" id="destGrid">
+          <!-- Destination cards injected by JS -->
+        </div>
+      </div>
+    </section>
 
-    // --- Gallery ---
-    const galleryGrid=document.getElementById('galleryGrid');
-    galleryImgs.forEach((src,i)=>{
-      const img=document.createElement('img');
-      img.src=src; img.alt=`Trip photo ${i+1}`;
-      galleryGrid.appendChild(img);
-    });
+    <!-- Packages -->
+    <section class="section" id="packages">
+      <div class="container">
+        <h2 class="title">Featured Packages</h2>
+        <p class="lead">
+          Transparent pricing with flights, stays, transfers & curated
+          experiences.
+        </p>
+        <div class="grid grid-3" id="pkgGrid">
+          <!-- Packages injected by JS -->
+        </div>
+      </div>
+    </section>
 
-    // --- Testimonials slider ---
-    let slideIndex=0;
-    const slides=()=>Array.from(document.querySelectorAll('.slide'));
-    function showSlide(i){
-      const s=slides();
-      s.forEach((el,idx)=>el.classList.toggle('active', idx===i));
-    }
-    function nextSlide(){slideIndex=(slideIndex+1)%slides().length;showSlide(slideIndex)}
-    function prevSlide(){slideIndex=(slideIndex-1+slides().length)%slides().length;showSlide(slideIndex)}
-    setInterval(nextSlide, 6000);
+    <!-- Why Choose Us -->
+    <section class="section why" id="why-us">
+      <div class="container grid grid-3">
+        <div class="card" style="padding: 22px">
+          <div class="point">
+            <i>✓</i>
+            <div>
+              <h3>Handpicked Stays</h3>
+              <p class="lead">
+                We partner with stays that deliver character, comfort, and
+                service.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding: 22px">
+          <div class="point">
+            <i>₹</i>
+            <div>
+              <h3>Clear, Fair Prices</h3>
+              <p class="lead">
+                No hidden costs. All inclusions listed upfront with GST
+                invoices.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding: 22px">
+          <div class="point">
+            <i>24×7</i>
+            <div>
+              <h3>Always-On Support</h3>
+              <p class="lead">
+                From airport pickup to last-day drop, we’re one WhatsApp away.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // --- Contact form (demo-only) ---
-    function prefill(title,place){
-      document.getElementById('destination').value=place;
-      document.getElementById('notes').value = `Interested in: ${title}`;
-      scrollToId('contact');
-    }
-    function submitForm(e){
-      e.preventDefault();
-      const data={
-        name:document.getElementById('name').value.trim(),
-        phone:document.getElementById('phone').value.trim(),
-        email:document.getElementById('email').value.trim(),
-        people:document.getElementById('people').value,
-        from:document.getElementById('from').value.trim(),
-        destination:document.getElementById('destination').value.trim(),
-        dates:document.getElementById('dates').value.trim(),
-        notes:document.getElementById('notes').value.trim()
-      };
-      // Integrate with Formspree/EmailJS or your API here.
-      // Example (Formspree): fetch('https://formspree.io/f/yourid', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)})
-      document.getElementById('formStatus').textContent='Thanks! We\'ll get back within a few hours.';
-      // Optional: open WhatsApp with prefilled message
-      const msg=encodeURIComponent(`Trip Enquiry\nName: ${data.name}\nPhone: ${data.phone}\nFrom: ${data.from}\nDestination: ${data.destination}\nDates: ${data.dates}\nPeople: ${data.people}\nNotes: ${data.notes}`);
-      // window.open(`https://wa.me/910000000000?text=${msg}`,'_blank');
-      e.target.reset();
-    }
+    <!-- Testimonials Slider -->
+    <section class="section" id="testimonials">
+      <div class="container slider">
+        <h2 class="title">Happy Travelers</h2>
+        <div class="card" style="padding: 22px">
+          <figure class="slide active">
+            <blockquote>
+              “From hotels and drivers to the tiny details—everything was
+              perfect. We’ll book again!”
+            </blockquote>
+            <figcaption>— Aarti & Nikhil (Ooty, 2025)</figcaption>
+          </figure>
+          <figure class="slide">
+            <blockquote>
+              “Bali honeymoon was dreamy. Private pool villa, island hops, the
+              works. Thank you!”
+            </blockquote>
+            <figcaption>— Simran & Karan (Bali, 2025)</figcaption>
+          </figure>
+          <figure class="slide">
+            <blockquote>
+              “Kashmir in spring with curated local guides—felt safe, serene,
+              special.”
+            </blockquote>
+            <figcaption>— Rohit (Kashmir, 2024)</figcaption>
+          </figure>
+          <div style="display: flex; gap: 10px; margin-top: 14px">
+            <button
+              class="btn outline"
+              onclick="prevSlide()"
+              aria-label="Previous testimonial"
+            >
+              ◀
+            </button>
+            <button
+              class="btn"
+              onclick="nextSlide()"
+              aria-label="Next testimonial"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <!-- Travel Hacks / Blog preview -->
+    <section class="section" id="hacks">
+      <div class="container">
+        <h2 class="title">Travel Hacks & Guides</h2>
+        <div class="grid grid-3">
+          <article class="card" style="overflow: hidden">
+            <img
+              src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop"
+              alt="Bali cliffs and ocean"
+            />
+            <div style="padding: 18px">
+              <h3>Top Bali Travel Hacks</h3>
+              <p class="lead">
+                Skip crowds at Gates of Heaven, best SIMs, trusted money
+                changers, and island-hopping tips.
+              </p>
+              <a class="btn outline" href="#" aria-label="Read Bali hacks"
+                >Read</a
+              >
+            </div>
+          </article>
+          <article class="card" style="overflow: hidden">
+            <img
+              src="https://images.unsplash.com/photo-1500534314210-9b6d0f9e1e0b?q=80&w=1200&auto=format&fit=crop"
+              alt="Maldives overwater villas"
+            />
+            <div style="padding: 18px">
+              <h3>Maldives on Any Budget</h3>
+              <p class="lead">
+                Resort vs local island stays, transfer choices, and meal plans
+                explained simply.
+              </p>
+              <a class="btn outline" href="#" aria-label="Read Maldives tips"
+                >Read</a
+              >
+            </div>
+          </article>
+          <article class="card" style="overflow: hidden">
+            <img
+              src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1200&auto=format&fit=crop"
+              alt="Paris city view"
+            />
+            <div style="padding: 18px">
+              <h3>Europe Visa & Schengen Basics</h3>
+              <p class="lead">
+                Entry rules, biometrics, and how to plan multi-country routes
+                with ease.
+              </p>
+              <a class="btn outline" href="#" aria-label="Read Schengen basics"
+                >Read</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <h2 class="title">Trip Moments</h2>
+        <div class="grid gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section" id="faqs">
+      <div class="container">
+        <h2 class="title">FAQs</h2>
+        <details>
+          <summary>What’s included in the package price?</summary>
+          <p>
+            Standard inclusions: flights (if mentioned), stay, breakfast,
+            airport transfers, and listed tours. Exclusions are clearly stated
+            in each package.
+          </p>
+        </details>
+        <details>
+          <summary>Can I customize an itinerary?</summary>
+          <p>
+            Absolutely. Share your dates, budget, and preferences—we’ll tailor
+            it and send options within hours.
+          </p>
+        </details>
+        <details>
+          <summary>How do payments work?</summary>
+          <p>
+            Secure online link (Razorpay/UPI). Pay in milestones—booking
+            advance, pre-departure balance.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container grid grid-2">
+        <div class="card" style="padding: 22px">
+          <h2 class="title">Get a Free Quote</h2>
+          /
+          <form onsubmit="submitForm(event)">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 12px">
+              <div class="field">
+                <label for="name">Name</label><input id="name" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone/WhatsApp</label
+                ><input id="phone" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label
+                ><input id="email" type="email" />
+              </div>
+              <div class="field">
+                <label for="people">Travellers</label
+                ><input id="people" type="number" min="1" value="2" />
+              </div>
+              <div class="field">
+                <label for="from">From City</label
+                ><input id="from" placeholder="Delhi, Mumbai, ..." />
+              </div>
+              <div class="field">
+                <label for="destination">Destination</label
+                ><input
+                  id="destination"
+                  placeholder="Bali, Maldives, ..."
+                  required
+                />
+              </div>
+              <div class="field" style="grid-column: 1/3">
+                <label for="dates">Dates</label
+                ><input id="dates" placeholder="e.g., 15–22 Oct" />
+              </div>
+              <div class="field" style="grid-column: 1/3">
+                <label for="notes">Notes</label
+                ><textarea
+                  id="notes"
+                  rows="4"
+                  placeholder="Budget range, hotel type, highlights..."
+                ></textarea>
+              </div>
+            </div>
+            <div style="display: flex; gap: 12px; margin-top: 12px">
+              <button class="btn" type="submit">Request Quote</button>
+              <a
+                class="btn outline"
+                href="https://wa.me/910000000000?text=Hi%20I%20want%20a%20trip%20quote"
+                target="_blank"
+                rel="noreferrer"
+                >WhatsApp Us</a
+              >
+            </div>
+            <p
+              id="formStatus"
+              class="small"
+              role="status"
+              aria-live="polite"
+              style="margin-top: 10px"
+            ></p>
+          </form>
+        </div>
+        <div class="card" style="padding: 22px">
+          <h3>Visit Us</h3>
+          <p class="lead">
+            Near Deputy Ganj Post Office, Bulandshahr, Uttar Pradesh, 2030001
+          </p>
+          <iframe
+            class="map"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363153166!3d-37.81627944202105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzAwLjYiUyAxNDTCsDU3JzE0LjMiRQ!5e0!3m2!1sen!2sin!4v1689250000000"
+          ></iframe>
+          <div style="display: flex; gap: 12px; margin-top: 12px">
+            <a href="tel:+91 93687 82277" class="chip">📞 +91 94587 82277</a>
+            <a href="mailto:hm@musafirhimeh.com" class="chip"
+              >✉️ info@musafirhimesh.com</a
+            >
+            <a href="#" class="chip">📷 Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+          "
+        >
+          <p>
+            © <span id="year"></span> Travel with Himesh Prabhakar • All rights
+            reserved
+          </p>
+          <p class="small">
+            Made with ❤ for wanderers. <a href="#faqs">FAQs</a> •
+            <a href="#">Privacy</a> • <a href="#">Terms</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
